@@ -104,8 +104,8 @@ void MainWindow::Processing(QStringList inputMask, QString outputPath, bool dele
         connect(processor, &FileProcessor::finished, processor, &FileProcessor::deleteLater);
 
 
-        // connect(ui->pushButton_4, &QPushButton::clicked, thread, &QThread::quit);
-        // connect(ui->pushButton_4, &QPushButton::clicked, processor, &FileProcessor::deleteLater);
+        connect(ui->pushButton_4, &QPushButton::clicked, thread, &QThread::quit);
+        connect(ui->pushButton_4, &QPushButton::clicked, processor, &FileProcessor::deleteLater);
 
 
         connect(thread, &QThread::finished, thread, &QThread::deleteLater);
